@@ -23,13 +23,13 @@ namespace LuckyNumbers
 
                 Console.WriteLine("Please enter the second number in your range:");
                 secondNum = int.Parse(Console.ReadLine());
-                if (firstNum == secondNum)
+                if (secondNum <= firstNum)
                 {
                     Console.WriteLine("Invalid. Please enter two different numbers.\n");
 
                 }
             }
-            while (firstNum == secondNum);
+            while (secondNum <= firstNum);
 
             Console.WriteLine("Thank you.");
 
@@ -55,8 +55,11 @@ namespace LuckyNumbers
             Console.WriteLine("Thank you!\n");
 
             //winning numbers array
+            int correctGuesses = 0;
+
             Random rando = new Random();
             int[] luckyNum = new int[6];
+
             for (int i = 0; i < luckyNum.Length; i++)
             {
                 int randomNumber = rando.Next(secondNum) + 1;
@@ -68,10 +71,28 @@ namespace LuckyNumbers
                 Console.WriteLine("Lucky Number: " + randomNumber);
             }
 
+            foreach (int number in luckyGuess)
+            {
+               if (luckyNum.Contains(number))
+                {
+                    correctGuesses++;
+                }
+            }
+
+            Console.WriteLine("You have guessed " + correctGuesses + " correctly!");
+
+
+           
+
+
+
+
+
+
 
             //jackpot
-            string jackpot = "60,000";
-            int jackpotNum = 60000;
+            string jackpot = "$60,000";
+            int jackpotNumber = 60000;
             int winNum;
 
             for(int i = 0; i < luckyGuess.Length; i++)
