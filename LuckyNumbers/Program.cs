@@ -11,7 +11,8 @@ namespace LuckyNumbers
         static void Main(string[] args)
         {
             
-            Console.WriteLine("Welcome to Lucky Numbers! Your goal is to guess as many numbers within\na range correctly as possible!\n");
+            Console.WriteLine("Welcome to Lucky Numbers! Here's how the game is played: \nYou pick a range between two numbers, like 1 and 13. Then, you\n pick six numbers within that range.");
+            Console.WriteLine("Your opponent, the computer, will also pick six numbers within your range. If \nyou guess all six of the computer's numbers correctly, you will win $60,000!");
             int firstNum;
             int secondNum;
 
@@ -79,29 +80,23 @@ namespace LuckyNumbers
                 }
             }
 
-            Console.WriteLine("You have guessed " + correctGuesses + " correctly!");
-
-
-           
+            Console.WriteLine("You guessed " + correctGuesses + " correctly!");
 
 
 
+            //jackpot is equal to $60,000
+            int jackpot = 60000;
+            int prizeMoney = jackpot / correctGuesses;
 
-
-
-
-            //jackpot
-            string jackpot = "$60,000";
-            int jackpotNumber = 60000;
-            int winNum;
-
-            for(int i = 0; i < luckyGuess.Length; i++)
+            if (correctGuesses == 6)
             {
-                if(luckyNum.Contains(luckyGuess[i]))
-                {
-
-                }
+                Console.WriteLine("CONGRATULATIONS! You guessed them all right! $60,000 to you!");
             }
+            else
+            {
+                Console.WriteLine("You have won $" + prizeMoney + "!");
+            }
+
 
             
             
