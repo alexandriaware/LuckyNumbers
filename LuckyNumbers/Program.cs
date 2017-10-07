@@ -31,15 +31,14 @@ namespace LuckyNumbers
             }
             while (firstNum == secondNum);
 
-            Console.WriteLine("Thank you.\n");
+            Console.WriteLine("Thank you.");
 
 
             //user array
             int[] luckyGuess = new int[6];
             
-            Console.WriteLine("Please guess a number from within your range.");
-            //luckyGuess[0] = int.Parse(Console.ReadLine());
-
+            Console.WriteLine("Please guess a number from within your range.\n");
+           
             for (int i = 0; i < luckyGuess.Length; i++)
             {
                 luckyGuess[i] = int.Parse(Console.ReadLine());
@@ -49,14 +48,43 @@ namespace LuckyNumbers
                 }
                 else
                 {
-                    Console.WriteLine("Please enter another number!");
+                    Console.WriteLine("Please enter another number!\n");
                 }
             }
 
             Console.WriteLine("Thank you!\n");
 
-            //
+            //winning numbers array
+            Random rando = new Random();
+            int[] luckyNum = new int[6];
+            for (int i = 0; i < luckyNum.Length; i++)
+            {
+                int randomNumber = rando.Next(secondNum) + 1;
+                luckyNum[i] = randomNumber;
+            }
+            
+            foreach (int randomNumber in luckyNum)
+            {
+                Console.WriteLine("Lucky Number: " + randomNumber);
+            }
 
+
+            //jackpot
+            string jackpot = "60,000";
+            int jackpotNum = 60000;
+            int winNum;
+
+            for(int i = 0; i < luckyGuess.Length; i++)
+            {
+                if(luckyNum.Contains(luckyGuess[i]))
+                {
+
+                }
+            }
+
+            
+            
+             
 
 
 
