@@ -78,6 +78,7 @@ namespace LuckyNumbers
                         winningNumber = rando.Next(secondNum) + 1;
                     }
                     while (luckyNum.Contains(winningNumber));
+
                     luckyNum[i] = winningNumber;
                     
                     ////commented out original code for stretch task
@@ -107,18 +108,19 @@ namespace LuckyNumbers
 
                 //jackpot is equal to $60,000
                 int jackpot = 60000;
-                int prizeMoney = correctGuesses * 10000;
+                int prizeMoney;
 
                 if (correctGuesses == 6)
                 {
                     Console.WriteLine("CONGRATULATIONS! You guessed them all right! $" + jackpot + " to you!");
                 }
-                else if (correctGuesses == 0)
+                else if (correctGuesses == 0)   
                 {
-                    Console.WriteLine("You lose. No correct guesses.");
+                    Console.WriteLine("You lose. No correct guesses, and no prize money for you!");
                 }
                 else
                 {
+                    prizeMoney = jackpot / correctGuesses;
                     Console.WriteLine("You have won $" + prizeMoney + "!");
                 }
 
@@ -131,7 +133,7 @@ namespace LuckyNumbers
 
             if (playAgain == "no")
             {
-                Console.WriteLine("Thanks for playing.");
+                Console.WriteLine("Thanks for playing!");
             }
             
 
