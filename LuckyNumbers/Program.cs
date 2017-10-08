@@ -75,6 +75,7 @@ namespace LuckyNumbers
                     luckyNum[i] = winningNumber;
                 }
 
+
                 foreach (int winningNumber in luckyNum)
                 {
                     Console.WriteLine("Lucky Number: " + winningNumber);
@@ -100,7 +101,7 @@ namespace LuckyNumbers
 
                 if (correctGuesses == 6)
                 {
-                    Console.WriteLine("CONGRATULATIONS! You guessed them all right! $60,000 to you!");
+                    Console.WriteLine("CONGRATULATIONS! You guessed them all right! $" + jackpot + " to you!");
                 }
                 else if (correctGuesses == 0)
                 {
@@ -117,6 +118,11 @@ namespace LuckyNumbers
             }
 
             while (playAgain == "yes");
+
+            if (playAgain == "no")
+            {
+                Console.WriteLine("Thanks for playing.");
+            }
             
 
 
