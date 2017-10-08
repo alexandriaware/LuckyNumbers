@@ -71,8 +71,18 @@ namespace LuckyNumbers
 
                 for (int i = 0; i < luckyNum.Length; i++)
                 {
-                    int winningNumber = rando.Next(secondNum) + 1;
+                    int winningNumber;
+
+                    do
+                    {
+                        winningNumber = rando.Next(secondNum) + 1;
+                    }
+                    while (luckyNum.Contains(winningNumber));
                     luckyNum[i] = winningNumber;
+                    
+                    ////commented out original code for stretch task
+                    //int winningNumber = rando.Next(secondNum) + 1;
+                    //luckyNum[i] = winningNumber;
                 }
 
 
