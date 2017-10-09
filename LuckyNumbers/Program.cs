@@ -106,7 +106,7 @@ namespace LuckyNumbers
 
 
 
-                //jackpot is equal to $60,000
+               
                 int jackpot = 60000;
                 int prizeMoney;
 
